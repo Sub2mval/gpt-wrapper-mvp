@@ -78,7 +78,7 @@ def generate_content(prompt: str) -> str:
     Returns:
         str: The generated content from the LLM, or an error message.
     """
-    api_key = os.getenv("TOGETHER_API_KEY")
+    api_key = st.secrets["TOGETHER_AI_KEY"]
     if not api_key:
         raise ValueError("TOGETHER_API_KEY environment variable not set.")
     
