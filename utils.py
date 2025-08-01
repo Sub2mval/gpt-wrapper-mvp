@@ -86,7 +86,7 @@ def generate_content(prompt: str) -> str:
     
     try:
         response = together.chat.completions.create(
-            model="meta-llama/Llama-3-8b-chat-hf",
+            model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that strictly follows user instructions."},
                 {"role": "user", "content": prompt}
