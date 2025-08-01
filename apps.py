@@ -18,6 +18,8 @@ from utils import (
 # Load environment variables from .env file
 load_dotenv()
 
+os.environ["TOGETHER_AI_KEY"] = st.secrets["TOGETHER_AI_KEY"]
+
 # --- Page Configuration ---
 st.set_page_config(
     page_title="Agency GPT Wrapper",
