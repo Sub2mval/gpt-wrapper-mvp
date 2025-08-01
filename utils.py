@@ -8,7 +8,7 @@ from typing import List
 os.environ["TOGETHER_API_KEY"] = st.secrets["TOGETHER_AI_KEY"]
 # Set up the base directory for uploads
 UPLOAD_DIRECTORY = Path("uploads")
-client = Together()
+client = Together(api_key = st.secrets["TOGETHER_AI_KEY"])
 
 def setup_client_directories():
     """Ensures that client-specific upload directories exist."""
