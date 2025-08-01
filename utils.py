@@ -83,7 +83,7 @@ def generate_content(prompt: str) -> str:
     if not api_key:
         raise ValueError("TOGETHER_API_KEY environment variable not set.")
     
-    os.environ("TOGETHER_API_KEY") = api_key
+    os.environ["TOGETHER_API_KEY"] = api_key
     
     try:
         response = client.chat.completions.create(
