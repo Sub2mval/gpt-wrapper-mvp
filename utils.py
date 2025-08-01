@@ -5,6 +5,7 @@ from together import Together
 from pathlib import Path
 from typing import List
 
+os.environ["TOGETHER_API_KEY"] = st.secrets["TOGETHER_AI_KEY"]
 # Set up the base directory for uploads
 UPLOAD_DIRECTORY = Path("uploads")
 client = Together()
@@ -83,7 +84,7 @@ def generate_content(prompt: str) -> str:
     if not api_key:
         raise ValueError("TOGETHER_API_KEY environment variable not set.")
     
-    os.environ["TOGETHER_API_KEY"] = api_key
+     
     
     try:
         response = client.chat.completions.create(
