@@ -1,12 +1,13 @@
 # utils.py
 import streamlit as st
 import os
-import together
+from together import Together
 from pathlib import Path
 from typing import List
 
 # Set up the base directory for uploads
 UPLOAD_DIRECTORY = Path("uploads")
+client = Together()
 
 def setup_client_directories():
     """Ensures that client-specific upload directories exist."""
@@ -85,7 +86,7 @@ def generate_content(prompt: str) -> str:
     together.api_key = api_key
     
     try:
-        response = together.chat.completions.create(
+        response = client.chat.completions.create(
             model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that strictly follows user instructions."},
